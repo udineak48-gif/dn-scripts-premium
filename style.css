@@ -266,4 +266,17 @@ pre{
   margin: 10px 0 0;
   text-transform: uppercase;
   text-shadow: 0 0 15px rgba(255,0,0,.6);
+
+}
+.claimText{
+  margin-top:12px;
+  font-size:14px;
+  font-weight:700;
+  color:rgba(255,255,255,.75);
+  text-align:center;
+  line-height:1.4;
+}
+
+.claimText b{
+  color:#ff1a1a;
 }
