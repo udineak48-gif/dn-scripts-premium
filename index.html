@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DN Script Premium</title>
+  <title>DN Premium</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- anti-cache biar update cepat -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -17,21 +19,23 @@
     <div class="brand">
       <div class="logo">D</div>
       <div class="brand-text">
-        <div class="name">DN <span>SCRIPT</span></div>
-        <div class="sub">PREMIUM BUNDLE v1</div>
+        <div class="name">DN <span>PREMIUM</span></div>
+        <div class="sub">BUNDLE v1</div>
       </div>
     </div>
 
+    <!-- arahkan ke discord untuk beli/claim -->
     <a class="cta" href="https://discord.gg/SsrJyjbDy" target="_blank" rel="noopener">
-      ⭐ Buy Premium Key
+      ⭐ Claim / Buy Key
     </a>
   </header>
 
   <main class="wrap">
 
-    <h2 class="brandBig">DN SCRIPT PREMIUM</h2>
+    <h2 class="brandBig">DN PREMIUM</h2>
+
     <h1 class="bigTitle">POWER.</h1>
-    <p class="subtitle">Ultimate Premium Script UI Bundle 🔥</p>
+    <p class="subtitle">Ultimate Premium UI Bundle 🔥</p>
 
     <!-- BUTTONS -->
     <section class="actions">
@@ -44,74 +48,56 @@
       </a>
     </section>
 
-    <!-- ✅ FREE + CLAIM INFO (TANPA TEKS ATAS LAMA) -->
+    <!-- FREE / KEY INFO BOX -->
     <div class="freeBox">
-      🎁 <b>FREE SCRIPTS DI BAWAH INI</b><br>
+      🎁 <b>FREE RESOURCES AVAILABLE!</b><br>
       Yang free bisa dipakai kapan aja ✅<br><br>
 
-      🔑 <b>Untuk Key / Premium:</b><br>
-      Join Discord, lalu cari channel <b>#free-resources</b> / <b>#claim</b><br>
-      dan ikuti instruksi claim yang ada di sana 🔥<br><br>
+      🔑 <b>CLAIM KEY hanya di Discord!</b><br>
+      Klik <b>Join Discord</b> → masuk channel claim key → ikuti instruksi ✅🔥<br><br>
 
       <a href="https://discord.gg/SsrJyjbDy" target="_blank" rel="noopener">
-        👉 JOIN DISCORD SEKARANG
+        👉 JOIN DISCORD & CLAIM KEY
       </a>
     </div>
 
-    <!-- PREMIUM CARD -->
+    <!-- INFO / COPY BOX (kode/info apa pun) -->
     <section class="neon-card">
       <div class="card-head">
-        <div class="left">PREMIUM ENDPOINT</div>
-        <div class="right">KEYLESS ACCESS</div>
+        <div class="left">INFO / CODE</div>
+        <div class="right">COPY READY</div>
       </div>
 
       <div class="codebox">
-        <pre id="codeText">loadstring(game:HttpGet("https://pastefy.app/bZSz4T6I/raw"))()</pre>
+        <pre id="codeText">CODE_DISINI</pre>
       </div>
 
       <button class="btn primary" id="copyBtn">
-        ⧉ COPY PREMIUM SCRIPT
+        ⧉ COPY
       </button>
 
       <p class="hint" id="copyHint"></p>
     </section>
 
-    <!-- GRID -->
+    <!-- COMMUNITY GRID -->
     <section class="section-row">
       <div class="section-title">
         <span class="bar red"></span>
-        <span>EXECUTORS</span>
+        <span>LINKS</span>
       </div>
 
       <div class="section-title">
         <span class="bar green"></span>
-        <span>COMMUNITY</span>
+        <span>SUPPORT</span>
       </div>
     </section>
 
     <section class="grid">
-
       <a class="mini" href="https://delta-executor.com" target="_blank" rel="noopener">
-        <div class="mini-ico">📱</div>
+        <div class="mini-ico">🌐</div>
         <div>
-          <div class="mini-title">DELTA</div>
-          <div class="mini-sub">Android</div>
-        </div>
-      </a>
-
-      <a class="mini mini-green" href="https://delta-executor.com" target="_blank" rel="noopener">
-        <div class="mini-ico">🟢</div>
-        <div>
-          <div class="mini-title">CHANNEL</div>
+          <div class="mini-title">WEBSITE</div>
           <div class="mini-sub">Open Link</div>
-        </div>
-      </a>
-
-      <a class="mini" href="https://delta-executor.com" target="_blank" rel="noopener">
-        <div class="mini-ico">🖥️</div>
-        <div>
-          <div class="mini-title">DELTA</div>
-          <div class="mini-sub">Windows / Info</div>
         </div>
       </a>
 
@@ -122,15 +108,29 @@
           <div class="mini-sub">Join Server</div>
         </div>
       </a>
-
     </section>
 
     <a class="tutorial" href="https://discord.gg/SsrJyjbDy" target="_blank" rel="noopener">
-      📘 CLAIM DI DISCORD
+      📘 CLAIM KEY DI DISCORD
     </a>
 
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    const btn = document.getElementById("copyBtn");
+    const hint = document.getElementById("copyHint");
+    const code = document.getElementById("codeText");
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(code.innerText.trim());
+        hint.textContent = "✅ Berhasil di-copy!";
+        setTimeout(()=> hint.textContent = "", 1500);
+      } catch (e) {
+        hint.textContent = "❌ Gagal copy (browser gak support).";
+        setTimeout(()=> hint.textContent = "", 2000);
+      }
+    });
+  </script>
 </body>
 </html>
